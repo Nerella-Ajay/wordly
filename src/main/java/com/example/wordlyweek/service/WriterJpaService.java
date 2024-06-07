@@ -56,11 +56,11 @@ public class WriterJpaService implements WriterRepository {
         }
         List<Magazine> magazines = magazineJpaRepository.findAllById(magazineIds);
 
-        if (magazine.size() != magazineIds.size()) {
+        if (magazines.size() != magazineIds.size()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
         writer.setMagazines(magazines);
-        return magazineJpaRepository.save(magazine);
+        return writerJpaRepository.save(writer);
     }
 
     @Override

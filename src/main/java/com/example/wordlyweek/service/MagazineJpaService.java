@@ -49,7 +49,7 @@ public class MagazineJpaService implements MagazineRepository {
     }
 
     @Override
-    public Magazine addMagazine(int magazineId) {
+    public Magazine addMagazine(Magazine magazine) {
         List<Integer> writerIds = new ArrayList<>();
         for (Writer writer : magazine.getWriters()) {
             writerIds.add(writer.getWriterId());
