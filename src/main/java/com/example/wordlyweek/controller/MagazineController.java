@@ -51,7 +51,7 @@ public class MagazineController {
     }
 
     @GetMapping("/magazines/{magazineId}/writers")
-    public List<Writer> getMagazineWriter(@PathVariable("magazineId") int magazineId) {
-        return magazineJpaService.getMagazineWriter(magazineId);
+    public List<Writer> getMagazineWriters(@PathVariable("magazineId") int magazineId) {
+        return magazineJpaService.getMagazineWriters(magazineId);
     }
 }

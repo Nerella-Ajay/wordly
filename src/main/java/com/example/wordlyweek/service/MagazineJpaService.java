@@ -109,7 +109,7 @@ public class MagazineJpaService implements MagazineRepository {
             Magazine magazine = magazineJpaRepository.findById(magazineId).get();
             List<Writer> writers = magazine.getWriters();
             for (Writer writer : writers) {
-                writers.getMagazines().remove(magazine);
+                writer.getMagazines().remove(magazine);
             }
             writerJpaRepository.saveAll(writers);
             magazineJpaRepository.deleteById(magazineId);
@@ -120,7 +120,7 @@ public class MagazineJpaService implements MagazineRepository {
     }
 
     @Override
-    public List<Writer> getMagazineWriter(int magazineId) {
+    public List<Writer> getMagazineWriters(int magazineId) {
         try {
             Magazine magazine = magazineJpaRepository.findById(magazineId).get();
             return magazine.getWriters();

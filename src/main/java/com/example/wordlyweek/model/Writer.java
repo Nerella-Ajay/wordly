@@ -65,7 +65,7 @@ public class Writer {
         return magazines;
     }
 
-    public void setMagazines(List<Magazine> magazine) {
+    public void setMagazines(List<Magazine> magazines) {
         this.magazines = magazines;
     }
 }
